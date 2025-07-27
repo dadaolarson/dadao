@@ -1,0 +1,20 @@
+from kivy.app import App
+from kivy.lang import Builder
+
+KV = '''
+BoxLayout:
+    orientation: 'vertical'
+    Label:
+        text: "Bonjour depuis le cloud"
+        font_size: "32sp"
+    Button:
+        text: "Quitter"
+        on_release: app.stop()
+'''
+
+class MonApp(App):
+    def build(self):
+        return Builder.load_string(KV)
+
+if __name__ == '__main__':
+    MonApp().run()
